@@ -13,7 +13,8 @@ mongoose.connect(process.env.MONGO_URL
   console.log(err);
 });
 
-app.use("/api/user", router);
+app.use(express.json());
+app.use("/api/users", router);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor iniciado na porta 3000!");
